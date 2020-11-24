@@ -1,0 +1,72 @@
+﻿@page
+@model WebDB_TaxiPool.Pages.FilReq.IndexModel
+@{
+    ViewData["Title"] = "Список запросов и фильтров";
+}
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Запросы
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/PerDep">Отдел кадров</a><br />
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/TaxiPool">Таксопарк</a><br />
+                <a class="nav-link text-dark" asp-area="" asp-page="Request/ListCall">Список вызовов</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link text-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Фильтры
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <form>
+                    Отобразить сотрудников по должностям:
+                    <select class="form-control-sm" asp-items="Model.SelPosition" name="id">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button asp-area="" asp-page="Filter/FilterPosition" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить автомобили по году выпуска:
+                    <input type="number" name="year"/>
+                    <button type="button" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить автомобили по маркам:
+                    <select class="form-control-sm" asp-items="Model.SelBrand">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button type="button" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить вызовы по тарифу:
+                    <select class="form-control-sm" asp-items="Model.SelRate">
+                        <option value="-1">не выбрано</option>
+                    </select>
+                    <button type="button" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
+                <form>
+                    Отобразить вызовы по датам:
+                    <input type="datetime-local" name="year" />
+                    <button type="button" class="btn btn-primary">Отфильтровать</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

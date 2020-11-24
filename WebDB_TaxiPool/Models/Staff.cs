@@ -26,7 +26,7 @@ namespace WebDB_TaxiPool.Models
         public long? PositionID { get; set; }
         [Display(Name = "Должность")]
         public Position Position { get; set; }
-        public IList<Auto> Auto { get; set; }
-        public IList<Call> Call { get; set; }
+        public List<Auto> Auto { get; set; }
+        public List<Call> Call { get; set; }
     }
 }

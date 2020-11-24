@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,15 +26,14 @@ namespace WebDB_TaxiPool.Models
         public long Mileage { get; set; }
         [Display(Name = "Код сотрудника-шофёра")]
         public long? DriverID { get; set; }
-        [Display(Name = "сотрудник-шофёр")]
-        public Staff Driver { get; set; }
+        public List<Staff> Staff { get; set; }
         [Display(Name = "Дата последнего ТО")]
         public DateTime DateLastTI { get; set; }
         [Display(Name = "Код сотрудника-механика")]
         public long? MechID { get; set; }
-        [Display(Name = "сотрудник-механик")]
-        public Staff Mech { get; set; }
         [Display(Name = "Специальные метки")]
         public string SpecMark { get; set; }
+
+        public List<Call> Call { get; set; }
     }
 }

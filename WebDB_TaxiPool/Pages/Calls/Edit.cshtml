@@ -1,0 +1,70 @@
+﻿@page
+@model WebDB_TaxiPool.Pages.Calls.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Call</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Call.ID" />
+            <div class="form-group">
+                <label asp-for="Call.DateTime" class="control-label"></label>
+                <input asp-for="Call.DateTime" class="form-control" />
+                <span asp-validation-for="Call.DateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Call.Phone" class="control-label"></label>
+                <input asp-for="Call.Phone" class="form-control" />
+                <span asp-validation-for="Call.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Call.From" class="control-label"></label>
+                <input asp-for="Call.From" class="form-control" />
+                <span asp-validation-for="Call.From" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Call.To" class="control-label"></label>
+                <input asp-for="Call.To" class="form-control" />
+                <span asp-validation-for="Call.To" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Call.RateID" class="control-label"></label>
+                <select asp-for="Call.RateID" class="form-control" asp-items="ViewBag.RateID"></select>
+                <span asp-validation-for="Call.RateID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Call.ServiceID" class="control-label"></label>
+                <select asp-for="Call.ServiceID" class="form-control" asp-items="ViewBag.ServiceID"></select>
+                <span asp-validation-for="Call.ServiceID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Call.AutoID" class="control-label"></label>
+                <select asp-for="Call.AutoID" class="form-control" asp-items="ViewBag.AutoID"></select>
+                <span asp-validation-for="Call.AutoID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Call.OperID" class="control-label"></label>
+                <select asp-for="Call.OperID" class="form-control" asp-items="ViewBag.OperID"></select>
+                <span asp-validation-for="Call.OperID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

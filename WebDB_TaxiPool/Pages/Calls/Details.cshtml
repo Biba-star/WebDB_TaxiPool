@@ -1,0 +1,67 @@
+﻿@page
+@model WebDB_TaxiPool.Pages.Calls.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Call</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Call.DateTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Call.DateTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Call.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Call.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Call.From)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Call.From)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Call.To)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Call.To)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Call.Rate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Call.Rate.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Call.Service)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Call.Service.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Call.Auto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Call.Auto.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Call.Oper)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Call.Oper.ID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Call.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

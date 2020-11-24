@@ -1,0 +1,82 @@
+﻿@page
+@model WebDB_TaxiPool.Pages.Autos.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Auto</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Auto.Brand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Auto.Brand.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Auto.RegNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Auto.RegNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Auto.NumberCarBody)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Auto.NumberCarBody)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Auto.EngineNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Auto.EngineNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Auto.YearOfIssue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Auto.YearOfIssue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Auto.Mileage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Auto.Mileage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Auto.DriverID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Auto.DriverID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Auto.DateLastTI)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Auto.DateLastTI)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Auto.MechID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Auto.MechID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Auto.SpecMark)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Auto.SpecMark)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Auto.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,90 @@
+﻿@page
+@model WebDB_TaxiPool.Pages.Autos.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].RegNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].NumberCarBody)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].EngineNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].YearOfIssue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].Mileage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].DriverID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].DateLastTI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].MechID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].SpecMark)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Auto) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberCarBody)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EngineNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearOfIssue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mileage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateLastTI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MechID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecMark)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

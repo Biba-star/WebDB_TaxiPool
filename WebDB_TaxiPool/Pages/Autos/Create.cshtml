@@ -1,0 +1,78 @@
+﻿@page
+@model WebDB_TaxiPool.Pages.Autos.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Auto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Auto.BrandID" class="control-label"></label>
+                <select asp-for="Auto.BrandID" class ="form-control" asp-items="ViewBag.BrandID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auto.RegNum" class="control-label"></label>
+                <input asp-for="Auto.RegNum" class="form-control" />
+                <span asp-validation-for="Auto.RegNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auto.NumberCarBody" class="control-label"></label>
+                <input asp-for="Auto.NumberCarBody" class="form-control" />
+                <span asp-validation-for="Auto.NumberCarBody" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auto.EngineNumber" class="control-label"></label>
+                <input asp-for="Auto.EngineNumber" class="form-control" />
+                <span asp-validation-for="Auto.EngineNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auto.YearOfIssue" class="control-label"></label>
+                <input asp-for="Auto.YearOfIssue" class="form-control" />
+                <span asp-validation-for="Auto.YearOfIssue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auto.Mileage" class="control-label"></label>
+                <input asp-for="Auto.Mileage" class="form-control" />
+                <span asp-validation-for="Auto.Mileage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auto.DriverID" class="control-label"></label>
+                <input asp-for="Auto.DriverID" class="form-control" />
+                <span asp-validation-for="Auto.DriverID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auto.DateLastTI" class="control-label"></label>
+                <input asp-for="Auto.DateLastTI" class="form-control" />
+                <span asp-validation-for="Auto.DateLastTI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auto.MechID" class="control-label"></label>
+                <input asp-for="Auto.MechID" class="form-control" />
+                <span asp-validation-for="Auto.MechID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auto.SpecMark" class="control-label"></label>
+                <input asp-for="Auto.SpecMark" class="form-control" />
+                <span asp-validation-for="Auto.SpecMark" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
